@@ -873,7 +873,8 @@ if __name__ == '__main__':
     smooth_fac_shift1 = 10
     fli_smooth_factor = np.array([0.1, 0.3])
     pli_smooth_factor = np.array([0.04, 0.02])
-    gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.5, 20.0, 18.5, 17.0, 60.0, 60.0])
+    #gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.5, 20.0, 18.5, 17.0, 39.0, 35.0])
+    gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.5, 20.0, 18.5, 17.0, 00.0, 00.0]) # disable
     # gps_cn0_db = np.array([35.0, 31.0, 28.3, 26.0, 23.5, 21.0, 19.0, 17.0, 39.0, 35.0])
 
     smooth_fac_factor = list()
@@ -885,7 +886,7 @@ if __name__ == '__main__':
     ###high
     dll_bn = np.array([2.0])
     dll_sum_bn = np.array([2.0, 1.0,  # 1.0 # 0.5~1.0
-                           0.5, 0.05, 0.03, 0.02, 0.02, 0.01])  # narrow, 2*20, 5*20, 10*20, 15*20, 30*20
+                           1.0, 0.05, 0.03, 0.02, 0.02, 0.01])  # narrow, 2*20, 5*20, 10*20, 15*20, 30*20
 
     fll_bn = np.array([1.5])
     fll_sum_bn = np.array([[20], [16], [12.0]])
@@ -903,12 +904,12 @@ if __name__ == '__main__':
     ###mid
     mode = 0
     rank = control.mid
-    dll_bn = np.array([1.5])
-    dll_sum_bn = np.array([1.5, 0.3,  # 0.6, 0.3, 0.15, 0.1
-                           0.5, 0.05, 0.03, 0.02, 0.02, 0.01])
+    dll_bn = np.array([1.0])
+    dll_sum_bn = np.array([1.2, 0.3,  # 0.6, 0.3, 0.15, 0.1
+                           0.3, 0.05, 0.03, 0.02, 0.02, 0.01])
     fll_bn = np.array([1.5])
-    fll_sum_bn = np.array([[12], [6], [3.5]])
-    pll_bn = np.array([[12], [8], [6], [3.0], [1.5]])
+    fll_sum_bn = np.array([[10], [6], [3.5]])
+    pll_bn = np.array([[10], [8], [6], [4.0], [1.5]])
     fll3_bn = np.array([1.5])
     fll3_sum_bn = np.array([[16], [12], [6.0]])
     pll3_bn = np.array([[12], [8], [6], [5], [3]])
@@ -923,7 +924,7 @@ if __name__ == '__main__':
     rank = control.low
     dll_bn = np.array([0.4])
     dll_sum_bn = np.array([1.0, 0.1,
-                           0.5, 0.05, 0.03, 0.02, 0.02, 0.01])
+                           0.1, 0.05, 0.03, 0.02, 0.02, 0.01])
     fll_bn = np.array([0.6])
     fll_sum_bn = np.array([[8], [4], [2.0]])
     pll_bn = np.array([[8], [6], [4], [3.0], [1.5]])
