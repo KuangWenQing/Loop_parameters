@@ -874,9 +874,10 @@ if __name__ == '__main__':
     fli_smooth_factor = np.array([0.1, 0.3])
     pli_smooth_factor = np.array([0.04, 0.02])
     #gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.5, 20.0, 18.5, 17.0, 39.0, 35.0])
-    # gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.5, 20.0, 18.5, 17.0, 00.0, 00.0]) # disable
-    gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.5, 20.0, 18.5, 17.0, 39.0, 35.0])  # enable
+    gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.5, 20.0, 18.5, 17.0, 00.0, 00.0]) # disable
+    # gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.5, 20.0, 18.5, 17.0, 39.0, 35.0])  # enable
     # gps_cn0_db = np.array([35.0, 31.0, 28.3, 26.0, 23.5, 21.0, 19.0, 17.0, 39.0, 35.0])
+    narrow_dll_bn = 1.0
 
     smooth_fac_factor = list()
     smooth_fac_factor.append(16)
@@ -887,7 +888,7 @@ if __name__ == '__main__':
     ###high
     dll_bn = np.array([2.0])
     dll_sum_bn = np.array([2.0, 1.0,  # 1.0 # 0.5~1.0
-                           1.0, 0.05, 0.03, 0.02, 0.02, 0.01])  # narrow, 2*20, 5*20, 10*20, 15*20, 30*20
+                           narrow_dll_bn, 0.05, 0.03, 0.02, 0.02, 0.01])  # narrow, 2*20, 5*20, 10*20, 15*20, 30*20
 
     fll_bn = np.array([1.5])
     fll_sum_bn = np.array([[20], [16], [12.0]])
@@ -907,7 +908,7 @@ if __name__ == '__main__':
     rank = control.mid
     dll_bn = np.array([1.0])
     dll_sum_bn = np.array([1.2, 0.5,  # 0.6, 0.3, 0.15, 0.1
-                           1.0, 0.05, 0.03, 0.02, 0.02, 0.01])
+                           narrow_dll_bn, 0.05, 0.03, 0.02, 0.02, 0.01])
     fll_bn = np.array([1.5])
     fll_sum_bn = np.array([[10], [6], [3.5]])
     pll_bn = np.array([[10], [8], [6], [4.0], [1.5]])
@@ -916,7 +917,7 @@ if __name__ == '__main__':
     pll3_bn = np.array([[12], [8], [6], [5], [3]])
     all_bn = []
     # limit_cfg = [12, 100, 50, 16, 35, 22, 17, 12]
-    limit_cfg = [10, 100, 50, 16, 35, 25, 16, 15]
+    limit_cfg = [12, 100, 50, 16, 35, 25, 16, 15]
     print("the middle state:")
     result = A.cal(dll_sum_bn, pll_bn, pll_long_bn, pll3_bn, fll_sum_bn,fll3_sum_bn, dll_bn, fll_bn, fll3_bn, all_bn, mode, rank, limit_cfg, gps_cn0_db, smooth_fac_factor)
 
@@ -925,7 +926,7 @@ if __name__ == '__main__':
     rank = control.low
     dll_bn = np.array([0.4])
     dll_sum_bn = np.array([1.0, 0.3,
-                           1.0, 0.05, 0.03, 0.02, 0.02, 0.01])
+                           narrow_dll_bn, 0.05, 0.03, 0.02, 0.02, 0.01])
     fll_bn = np.array([0.6])
     fll_sum_bn = np.array([[8], [4], [2.0]])
     pll_bn = np.array([[8], [6], [4], [3.0], [1.5]])
