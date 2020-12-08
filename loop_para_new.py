@@ -21,6 +21,7 @@ class para_convert:
     gl_nThreshold = 'U32 nThreshold[3][2] = {'
     gl_nPll2 = 'U32 nPll2[3][5][6] = {{'
     gl_nLongPll = "U32 nLongPll[5][6] = {"
+    gl_all = "U32 nAll[5][6] = {"
     gl_nPll3 = "U32 nPll3[3][5][9] = {{"
     gl_nFll2 = "U32 nFll2[3][4][3] = {{"
     gl_nFll3 = "U32 nFll3[3][4][6] = {{"
@@ -298,12 +299,42 @@ class para_convert:
                 coe.append(temp_coe)
         return coe
 
-    def pll(self,pll_bn, pll_long_bn, all_bn, gps_car_norm_7):
+    def pll(self,pll_bn, pll_long_bn, pll_bn_narrow, gps_car_norm_7):
         # length = len(pll_bn)
         # coe_size = np.shape(pll_bn)
         coe = []
         # pll_sum_ms = 1
         # for irow in range(0, coe_size[0]):
+        '''narrow pll bn for steady tracking'''
+        length = len(pll_bn_narrow)
+        for i in range(0, length):
+            pll_sum_ms = 2
+            if i == 0:
+                pll_sum_ms = 2
+            elif i == 1:
+                pll_sum_ms = 4
+            elif i == 2:
+                pll_sum_ms = 10
+            elif i == 3:
+                pll_sum_ms = 20
+            elif i == 4:
+                pll_sum_ms = 2 * 20
+            '''new para'''
+            coe0 = 0.001 * pll_sum_ms * math.pi * gps_car_norm_7 * ((pll_bn_narrow[i] / 0.53) ** 2)
+            lg_fac0 = int(np.log2((2.0 ** 23 - 1) / coe0))
+            pll_coe = int(np.ceil(coe0 * (2.0 ** lg_fac0)))
+            pll_frac = -lg_fac0
+            coe1 = math.pi * gps_car_norm_7 * (pll_bn_narrow[i] * 8 / 3.0)
+            lg_fac1 = int(np.log2((2.0 ** 23 - 1) / coe1))
+            pll_coe2 = int(np.ceil(coe1 * (2.0 ** lg_fac1)))
+            pll_frac2 = -lg_fac1
+
+            pll_coe_l = pll_coe & (2 ** 15 - 1)
+            pll_coe_h = pll_coe >> 15
+            pll_coe_l2 = pll_coe2 & (2 ** 15 - 1)
+            pll_coe_h2 = pll_coe2 >> 15
+            temp_coe = [pll_coe_l, pll_coe_h, pll_frac, pll_coe_l2, pll_coe_h2, pll_frac2]
+            coe.append(temp_coe)
         para_num = np.shape(pll_bn)
         for i in range(0, para_num[0]):
             if i == 0:
@@ -369,39 +400,6 @@ class para_convert:
             pll_coe_h2 = pll_coe2 >> 15
             temp_coe = [pll_coe_l, pll_coe_h, pll_frac, pll_coe_l2, pll_coe_h2, pll_frac2]
             coe.append(temp_coe)
-
-        # all_sum_ms = 10
-        # coe_size = np.shape(all_bn)
-        # for irow in range(0, coe_size[0]):
-        # length = len(all_bn)
-        # for i in range(0, length):
-        #     all_sum_ms = 2
-        #     if i == 0:
-        #         all_sum_ms = 2
-        #     elif i == 1:
-        #         all_sum_ms = 4
-        #     elif i == 2:
-        #         all_sum_ms = 10
-        #     elif i == 3:
-        #         all_sum_ms = 20
-        #     elif i == 4:
-        #         all_sum_ms = 100
-        #     '''new para'''
-        #     coe0 = 0.001 * all_sum_ms * math.pi * gps_car_norm_7 * ((all_bn[i] / 0.53) ** 2)
-        #     lg_fac0 = int(np.log2((2.0 ** 23 - 1) / coe0))
-        #     all_coe = int(np.ceil(coe0 * (2.0 ** lg_fac0)))
-        #     all_frac = -lg_fac0
-        #     coe1 = math.pi * gps_car_norm_7 * (all_bn[i] * 8 / 3.0)
-        #     lg_fac1 = int(np.log2((2.0 ** 23 - 1) / coe1))
-        #     all_coe2 = int(np.ceil(coe1 * (2.0 ** lg_fac1)))
-        #     all_frac2 = -lg_fac1
-        #
-        #     all_coe_l = all_coe & (2 ** 15 - 1)
-        #     all_coe_h = all_coe >> 15
-        #     all_coe_l2 = all_coe2 & (2 ** 15 - 1)
-        #     all_coe_h2 = all_coe2 >> 15
-        #     temp_coe = [all_coe_l, all_coe_h, all_frac, all_coe_l2, all_coe_h2, all_frac2]
-        #     coe.append(temp_coe)
         return coe
 
     def pll3(self, pll3_bn, gps_car_norm_7):
@@ -492,6 +490,7 @@ class para_convert:
     def hexPrint(self, arr, head):
         if head == "PLL ??ms:":
             para_convert.gl_nLongPll = "U32 nLongPll[5][6] = {"
+            para_convert.gl_all = "U32 nAll[5][6] = {"
         if head == "DLL 20ms:":
             para_convert.gl_nDllSum2 = "U32 nDllSum2[6][3] = {"
         idx = 0
@@ -516,7 +515,7 @@ class para_convert:
                         else:
                             para_convert.gl_nPll2 += '0x{:0>4X}, '.format(item)
                     para_convert.gl_nPll2 = para_convert.gl_nPll2[:-2] + '},\n\t\t\t\t\t\t'
-                if idx > 4:
+                if idx > 4 and idx < 10:
                     para_convert.gl_nLongPll += "{"
                     for item in each_arr:
                         if item < 0:
@@ -527,6 +526,17 @@ class para_convert:
                         else:
                             para_convert.gl_nLongPll += '0x{:0>4X}, '.format(item)
                     para_convert.gl_nLongPll = para_convert.gl_nLongPll[:-2] + '},\n\t\t\t\t\t\t'
+                if idx >= 10:
+                    para_convert.gl_all += "{"
+                    for item in each_arr:
+                        if item < 0:
+                            item = 2 ** 32 + item
+                            para_convert.gl_all += '0x{:X}, '.format(item)
+                        elif item > 65535:
+                            para_convert.gl_all += '0x{:0>8X}, '.format(item)
+                        else:
+                            para_convert.gl_all += '0x{:0>4X}, '.format(item)
+                    para_convert.gl_all = para_convert.gl_all[:-2] + '},\n\t\t\t\t\t\t'
             if head == "PLL3 ?ms:":
                 para_convert.gl_nPll3 += '{'
                 for item in each_arr:
@@ -614,7 +624,7 @@ class para_convert:
             para_convert.gl_nFll3 = para_convert.gl_nFll3[:-8] + '},\n\t\t\t\t\t{\t'
         if head == "DLL 20ms:":
             para_convert.gl_nDllSum1 = para_convert.gl_nDllSum1[:-8] + '},\n\t\t\t\t\t{\t'
-    def cal(self,dll,pll,pll_long,pll3,fll,fll3,dll_bit,fll_bit,fll3_bit,all_bn='',mode=0,rank =control.high, cnf = [], gps_cn0_db=[], smooth_fac_factor=[]):
+    def cal(self,dll,pll,pll_long,pll3,fll,fll3,dll_bit,fll_bit,fll3_bit,all_bn,mode=0,rank =control.high, cnf = [], gps_cn0_db=[], smooth_fac_factor=[]):
         if mode ==int(b'10',2):
             dll_bit = np.append(dll_bit,dll)
             # dll_m = self.dll_sum(dll, self.gps_code_norm)
@@ -1036,18 +1046,19 @@ if __name__ == '__main__':
     #                    [4.0, 3.5, 3.0], [2.0, 2.0, 2.0], [1.0, 0.6, 0.4]])  # 1ms, 2ms, 4ms, 10ms, 20ms, 100ms
     # all_bn = np.array([1.0,0.6,0.5,0.4,0.3])# 2ms, 4ms, 10ms, 20ms, 100ms
     A = para_convert()
-    pll_group_4 = 2.0
-    pll_long_bn = np.array([1.2, 1.0, 1.0, 1.0, 0.4]) #1103
-    #pll_long_bn = np.array([1.5, 1.0, 0.8, 0.8, 0.7])
+    '''for old track'''
+    pll_bn_wide   = [16, 8, 5, 3.0]
+    pll_bn_narrow = [10,  5, 3, 2.5, 1.5]
+    pll_long_bn = np.array([2.0, 1.5, 1.5, 1.0, 1.0]) #1103
     smooth_fac_shift0 = 16
     smooth_fac_shift1 = 10
     fli_smooth_factor = np.array([0.1, 0.3])
-    pli_smooth_factor = np.array([0.04, 0.02])
+    pli_smooth_factor = np.array([0.06, 0.06])
     #gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.5, 20.0, 18.5, 17.0, 39.0, 39.0])
     # gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.5, 20.0, 18.5, 17.0, 39.0, 00.0]) # disable
     # gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.0, 19.5, 18.0, 16.5, 39.0, 39.0])  # enable 1103
-    gps_cn0_db = np.array([33.0, 29.8, 27.3, 21, 0, 0, 0, 0, 39.0, 50.0])  # enable 1103
-    # gps_cn0_db = np.array([33.0, 28.5, 25, 20, 0, 0, 0, 0, 39.0, 39.0])  # enable 1103
+    # gps_cn0_db = np.array([32.0, 28, 25, 22, 19, 17, 15, 13, 36.0, 50.0])  # enable 1103
+    gps_cn0_db = np.array([32.0, 28, 25, 22, 19, 17, 15, 13, 36.0, 50.0])  # enable 1103
     #gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.5, 20.0, 18.5, 17.0, 39.0, 39.0])  # enable
     # gps_cn0_db = np.array([35.0, 31.0, 28.3, 26.0, 23.5, 21.0, 19.0, 17.0, 39.0, 35.0])
     narrow_dll_bn = 1.0
@@ -1065,17 +1076,16 @@ if __name__ == '__main__':
 
     fll_bn = np.array([1.5])
     fll_sum_bn = np.array([[30], [20], [8]])
-    pll_bn = np.array([[12], [8], [6], [3.0], [pll_group_4]]) #1103
-    #pll_bn = np.array([[16], [14], [10], [6.0], [2.0]])
+    # pll_bn = np.array([[12], [8], [6], [3.0], [pll_group_4]]) #1103
+    pll_bn = np.array([[20], [pll_bn_wide[0]], [pll_bn_wide[1]], [pll_bn_wide[2]], [pll_bn_wide[3]]])
     fll3_bn = np.array([3.0])
     fll3_sum_bn = np.array([[20], [16], [12.0]])
     pll3_bn = np.array([[28], [22], [18], [12], [6.0]])
 
-    all_bn = []
     #limit_cfg = [8, 50, 25, 12, 35, 22, 15, 12]
-    limit_cfg = [8, 50, 25, 12, 35, 25, 16, 13]
+    limit_cfg = [8, 50, 25, 12, 33, 26, 16, 13]
     print("the high state:")
-    result = A.cal(dll_sum_bn, pll_bn, pll_long_bn, pll3_bn, fll_sum_bn, fll3_sum_bn, dll_bn, fll_bn, fll3_bn, all_bn, mode, rank, limit_cfg, gps_cn0_db, smooth_fac_factor)
+    result = A.cal(dll_sum_bn, pll_bn, pll_long_bn, pll3_bn, fll_sum_bn, fll3_sum_bn, dll_bn, fll_bn, fll3_bn, pll_bn_narrow, mode, rank, limit_cfg, gps_cn0_db, smooth_fac_factor)
 
     ###mid
     mode = 0
@@ -1085,16 +1095,16 @@ if __name__ == '__main__':
                            + narrow_long_dll_bn)
     fll_bn = np.array([1.5])
     fll_sum_bn = np.array([[20], [12], [5]])
-    # pll_bn = np.array([[10], [8], [6], [4.0], [1.5]])
-    pll_bn = np.array([[10], [8], [6.0], [3.0], [pll_group_4]])
+    # pll_bn = np.array([[12], [8], [6], [4.5], [pll_group_4]])
+    pll_bn = np.array([[16],  [pll_bn_wide[0]], [pll_bn_wide[1]], [pll_bn_wide[2]], [pll_bn_wide[3]]])
     fll3_bn = np.array([1.5])
     fll3_sum_bn = np.array([[16], [12], [6.0]])
     pll3_bn = np.array([[12], [8], [6], [5], [3]])
-    all_bn = []
+
     # limit_cfg = [12, 100, 50, 16, 35, 22, 17, 12]
-    limit_cfg = [12, 100, 50, 16, 35, 25, 16, 15]
+    limit_cfg = [10, 100, 40, 16, 33, 26, 16, 15]
     print("the middle state:")
-    result = A.cal(dll_sum_bn, pll_bn, pll_long_bn, pll3_bn, fll_sum_bn,fll3_sum_bn, dll_bn, fll_bn, fll3_bn, all_bn, mode, rank, limit_cfg, gps_cn0_db, smooth_fac_factor)
+    result = A.cal(dll_sum_bn, pll_bn, pll_long_bn, pll3_bn, fll_sum_bn, fll3_sum_bn, dll_bn, fll_bn, fll3_bn, pll_bn_narrow, mode, rank, limit_cfg, gps_cn0_db, smooth_fac_factor)
 
     ###low
     mode = 0
@@ -1102,24 +1112,34 @@ if __name__ == '__main__':
     dll_bn = np.array([0.4])
     # dll_sum_bn = np.array([1.0, 0.2,
     #                        narrow_dll_bn, 0.05, 0.03, 0.02, 0.02, 0.01])
-    dll_sum_bn = np.array([1.0, 0.1]
+    dll_sum_bn = np.array([1.0, 0.2]
                            + narrow_long_dll_bn)
     fll_bn = np.array([0.6])
+    '''pwr-130 steady'''
+    # fll_sum_bn = np.array([[20], [10], [6]])
+    # pll_bn = np.array([[12], [8], [6], [5], [pll_group_4]])
+    '''pwr-133 steady'''
+    # fll_sum_bn = np.array([[20], [10], [5]])
+    # pll_bn = np.array([[12], [8], [8], [5], [pll_group_4]])  # pll_group_4 = 3.5
+
+    '''pwr-135 steady'''
+    fll_sum_bn = np.array([[20], [10], [6]])  # 3.5~6
+    pll_bn = np.array([[16],  [pll_bn_wide[0]], [pll_bn_wide[1]], [pll_bn_wide[2]], [pll_bn_wide[3]]])  # 3.0~4.5; 1.5~3.5
     '''old par'''
-    # pll_bn = np.array([[8], [6], [4], [3.0], [1.5]])
+    # fll_sum_bn = np.array([[8], [4], [2.0]])
     # pll_bn = np.array([[8], [6], [4], [3.0], [pll_group_4]])
     '''new par'''
-    fll_sum_bn = np.array([[60], [8.75], [2.0]])
-    pll_bn = np.array([[12], [8], [4], [3.0], [pll_group_4]])
+    # fll_sum_bn = np.array([[60], [8.75], [2.0]])
+    # pll_bn = np.array([[12], [8], [4], [3.0], [pll_group_4]])
 
     fll3_bn = np.array([1.0])
     fll3_sum_bn = np.array([[12], [8], [4.0]])
     pll3_bn = np.array([[10], [8], [6.0], [3.5], [1.0]])
-    all_bn = []
+
     # limit_cfg = [12, 100, 50, 16, 35, 22, 17, 12]
-    limit_cfg = [12, 100, 50, 16, 36, 32, 23, 17]
+    limit_cfg = [12, 100, 45, 16, 33, 26, 23, 16]
     print("the low state:")
-    result = A.cal(dll_sum_bn, pll_bn, pll_long_bn, pll3_bn, fll_sum_bn,fll3_sum_bn, dll_bn, fll_bn, fll3_bn, all_bn, mode, rank, limit_cfg, gps_cn0_db, smooth_fac_factor)
+    result = A.cal(dll_sum_bn, pll_bn, pll_long_bn, pll3_bn, fll_sum_bn, fll3_sum_bn, dll_bn, fll_bn, fll3_bn, pll_bn_narrow, mode, rank, limit_cfg, gps_cn0_db, smooth_fac_factor)
 
     # data = {"fll_2": 7.573589424255466, "dll1": 0.7209415625849652, "fll_bit": 2.2019919183998953,
     #  "pll_3": 7.377932579656648, "pll_2": 9.231968331200513, "fll": 13.687896404735579, "pll_1": 11.848610966939232,
@@ -1133,6 +1153,8 @@ if __name__ == '__main__':
     print(para_convert.gl_nPll2)
     para_convert.gl_nLongPll = para_convert.gl_nLongPll[:-8] + '};'
     print(para_convert.gl_nLongPll)
+    para_convert.gl_all = para_convert.gl_all[:-8] + '};'
+    print(para_convert.gl_all)
     para_convert.gl_nPll3 = para_convert.gl_nPll3[:-9] + '};'
     print(para_convert.gl_nPll3)
     para_convert.gl_nFll2 = para_convert.gl_nFll2[:-9] + '};'
@@ -1146,9 +1168,9 @@ if __name__ == '__main__':
     para_convert.gl_nDllSum2 = para_convert.gl_nDllSum2[:-8] + '};'
     print(para_convert.gl_nDllSum2)
 
-    fd = open("tmp.py", 'w')
+    fd = open("tmp.c", 'w')
     fd.write(A.gl_nCn0 + '\n' + A.gl_nSmooth + '\n' + A.gl_nThreshold + '\n'
-             + A.gl_nPll2 + '\n' + A.gl_nLongPll + '\n' + A.gl_nPll3 + '\n'
+             + A.gl_nPll2 + '\n' + A.gl_nLongPll + '\n' + A.gl_all + '\n' + A.gl_nPll3 + '\n'
              + A.gl_nFll2 + '\n' + A.gl_nFll3 + '\n' + A.gl_nDllBit + '\n'
              + A.gl_nDllSum1 + '\n' + A.gl_nDllSum2)
     fd.close()
@@ -1165,5 +1187,4 @@ if __name__ == '__main__':
         a_hex_renew = a_hex.reshape(shape_a)
         a_hex_renew.tolist()
         return a_hex_renew
-
 
