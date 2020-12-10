@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NavSubModules>
+<submodul_grp name="INIT" id="0x00">
+    <submodule name="INIT_LIB" id="0x00"></submodule>
+    <submodule name="INIT_OVER" id="0x01"></submodule>
+    <submodule name="INIT_INT" id="0x02"></submodule>
+    <submodule name="INIT_MEM" id="0x03"></submodule>
+    <submodule name="INIT_ABN" id="0x0F"></submodule>
+</submodul_grp>
+<submodul_grp name="INT" id="0x10">
+    <submodule name="INT_FLAG" id="0x10"></submodule>
+    <submodule name="INT_ABN" id="0x1F"></submodule>
+</submodul_grp>
+<submodul_grp  name="ACQ"    id="0x20">
+    <submodule name="ACQ_CFG" id="0x20"></submodule>
+    <submodule name="ACQ_DOP" id="0x21"></submodule>
+    <submodule name="ACQ_ABN" id="0x2F"></submodule>
+</submodul_grp>
+<submodul_grp name="TIME" id="0x30">
+    <submodule name="TIME_LOC" id="0x30"></submodule>
+    <submodule name="TIME_SET" id="0x31"></submodule>
+    <submodule name="TIME_MODIFY" id="0x32"></submodule>
+    <submodule name="TIME_ABN" id="0x3F"></submodule>
+</submodul_grp>
+<submodul_grp name="PVT" id="0x40">
+    <submodule name="PVT_LS" id="0x40"></submodule>
+    <submodule name="PVT_KF" id="0x41"></submodule>
+    <submodule name="PVT_ABN" id="0x4F"></submodule>
+</submodul_grp>
+<submodul_grp name="GPNAV" id="0x50">
+    <submodule name="GPNAV_NAV" id="0x50"></submodule>
+    <submodule name="GPNAV_CRC" id="0x51"></submodule>
+    <submodule name="GPNAV_FRM" id="0x52"></submodule>
+    <submodule name="GPNAV_ABN" id="0x5F"></submodule>
+</submodul_grp>
+<submodul_grp name="GPCHL" id="0x60">
+    <submodule name="GPCHL_CCB" id="0x60"></submodule>
+    <submodule name="GPCHL_CCBF_SRC" id="0x61"></submodule>
+    <submodule name="GPCHL_CCBF_PRC" id="0x62"></submodule>
+    <submodule name="GPCHL_SV" id="0x63"></submodule>
+	<submodule name="GPCHL_ABN" id="0x6F"></submodule>
+</submodul_grp>
+		<submodul_grp name="GPSAT" id="0x70">
+		<submodule name="GPSAT_STATUS"  id="0x70"></submodule>
+		<submodule name="GPSAT_PVT"  id="0x71"></submodule>
+		<submodule name="GPSAT_ABN"  id="0x7F"></submodule>
+</submodul_grp>
+<submodul_grp name="BDNAV" id="0x80">
+    <submodule name="BDNAV_NAV" id="0x80"></submodule>
+    <submodule name="BDNAV_CRC" id="0x81"></submodule>
+    <submodule name="BDNAV_FRM" id="0x82"></submodule>
+    <submodule name="BDNAV_ABN" id="0x8F"></submodule>
+</submodul_grp>
+<submodul_grp name="BDCHL" id="0x90">
+    <submodule name="BDCHL_CCB" id="0x90"></submodule>
+    <submodule name="BDCHL_CCBF_SRC" id="0x91"></submodule>
+    <submodule name="BDCHL_CCBF_PRC" id="0x92"></submodule>
+    <submodule name="BDCHL_SV" id="0x93"></submodule>
+		<submodule name="BDCHL_ABN" id="0x9F"></submodule>
+</submodul_grp>
+<submodul_grp name="BDSAT" id="0xA0">
+		<submodule name="BDSAT_STATUS"  id="0xA0"></submodule>
+		<submodule name="BDSAT_PVT"  id="0xA1"></submodule>
+		<submodule name="BDSAT_ABN"  id="0xAF"></submodule>
+</submodul_grp>
+<submodul_grp name="UART" id="0xB0">
+    <submodule name="UART_FOO" id="0xB0"></submodule>
+    <submodule name="UART_SOS" id="0xB1"></submodule>
+     <submodule name="UART_QRY" id="0xB2"></submodule>
+    <submodule name="UART_ERR" id="0xBF"></submodule>
+</submodul_grp>
+<submodul_grp name="SAVE" id="0xC0">
+    <submodule name="SAVE_EPH" id="0xC0"></submodule>
+    <submodule name="SAVE_ERR" id="0xCF"></submodule>
+</submodul_grp>
+<submodul_grp name="CHANNEL INFO" id="0xD0"></submodul_grp>
+<submodul_grp name="CHANNEL" id="0xD1"></submodul_grp>
+<submodul_grp name="CHANNEL STATE" id="0xD2"></submodul_grp>
+<submodul_grp name="ACQUIRE" id="0xD3"></submodul_grp>
+<submodul_grp name="RECOM SYS" id="0xD4"></submodul_grp>
+<submodul_grp name="INTERRUPT" id="0xD5"></submodul_grp>
+<submodul_grp name="KALMAN" id="0xD6"></submodul_grp>
+<submodul_grp name="NAVGPS" id="0xD7"></submodul_grp>
+<submodul_grp name="NAV ASSIST" id="0xD8"></submodul_grp>
+<submodul_grp name="SV DETAIL" id="0xD9"></submodul_grp>
+<submodul_grp name="NAVPROC" id="0xDA"></submodul_grp>
+<submodul_grp name="HOT_ST" id="0xDB"></submodul_grp>
+<submodul_grp name="HOT_ST_KEY" id="0xDC"></submodul_grp>
+<submodul_grp name="NAVTIME" id="0xDD"></submodul_grp>
+<submodul_grp name="NMEA POLL" id="0xDE"></submodul_grp>
+<submodul_grp name="USR PVT" id="0xDF"></submodul_grp>
+<submodul_grp name="ATTENTION" id="0xE0"></submodul_grp>
+<submodul_grp name="WARNING" id="0xE1"></submodul_grp>
+<submodul_grp name="ERROR" id="0xE2"></submodul_grp>
+<submodul_grp name="PV INFO" id="0xE3"></submodul_grp>
+<submodul_grp name="RES" id="0xE4"></submodul_grp>
+<submodul_grp name="RAIM" id="0xE5"></submodul_grp>
+<submodul_grp name="START MODE" id="0xE6"></submodul_grp>
+</NavSubModules>

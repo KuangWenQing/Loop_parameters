@@ -1,0 +1,1507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mmLogTables>
+  <mmLogTable submoduleId="0x00">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x01">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x02">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x03">
+    <Log>
+      <id>2</id>
+      <formate>malloc is over!</formate>
+    </Log>
+    <Log>
+      <id>1</id>
+      <formate>malloc is failed!</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x0F">
+	<Log>
+      <id>2</id>
+      <formate>scene is error! scene = %d</formate>
+    </Log>
+	<Log>
+      <id>1</id>
+      <formate>mode is error! mode = %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x10">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x1F">
+	<Log>
+      <id>2</id>
+      <formate>CCE interrupt is error!-%d</formate>
+    </Log>
+	<Log>
+      <id>1</id>
+      <formate>CCE is over!</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x20">
+    <Log>
+      <id>1</id>
+      <formate>acq set(big end) = 0x%08X, chl = %d, sv = %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x21">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x2F">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x30">
+    <Log>
+      <id>1</id>
+      <formate>time: wn = %d, sow = %d, sow1 = %f, sow2 = %f, cycle = %d, misec = %d, inmss = %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x31">
+    <Log>
+      <id>1</id>
+      <formate>set time:cyc = %d, misec = %d, inmss = %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x32">
+    <Log>
+      <id>1</id>
+      <formate>modify time:misec = %d, inmss = %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x3F">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x40">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x41">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x4F">
+	<Log>
+      <id>3</id>
+      <formate>PVT is failed by PVT_STATE_FAULT</formate>
+    </Log>
+		<Log>
+      <id>2</id>
+      <formate>PVT is failed by PVT_STATE_FAIL</formate>
+    </Log>
+    <Log>
+      <id>1</id>
+      <formate>PVT is failed by PVT_STATE_LACK</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x50">
+	<Log>
+      <id>1</id>
+      <formate>sv%d nav:0x%08X 0x%08X 0x%08X 0x%08X 0x%08X 0x%08X 0x%08X 0x%08X 0x%08X 0x%08X</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x51">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x52">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x5F">
+	<Log>
+      <id>3</id>
+      <formate>sv%d Crc is failed! idx%d:0x%08X</formate>
+    </Log>
+	<Log>
+      <id>2</id>
+      <formate>sv%d Crc is failed! idx2:0x%08X idx6:0x%08X</formate>
+    </Log>
+    <Log>
+      <id>1</id>
+      <formate>sv%d Crc is failed! idx1:0x%08X</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x60">
+	<Log>
+      <id>1</id>
+      <formate>chl%d, sv = %d, bit = %u, ms = %u, chip = %u, nco = %u, intp = %d, decp = %u, fd = %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x61">
+	<Log>
+      <id>1</id>
+      <formate>chl%d, sv = %d, sow = %d, frm = %u, bit = %u, ms = %u, chip = %u, nco = %u, intp = %d, decp = %u, fd = %d, cnr = %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x62">
+	<Log>
+      <id>1</id>
+      <formate>chl%d, wn = %d, pse1 = %f, pse2 = %f, phase1 = %.3f, phase2 = %.3f, ins doppler1 = %.3f, ins doppler2 = %.3f, int doppler1 = %.3f, int doppler2 = %.3f, cnr = %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x63">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x6F">
+	<Log>
+      <id>1</id>
+      <formate>sv%d chl%d is tracking failed!-%02X</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x70">
+	<Log>
+      <id>13</id>
+      <formate>chl%d:sv%d is ticked by TCK_PLI!</formate>
+    </Log>
+	<Log>
+      <id>12</id>
+      <formate>chl%d:sv%d is ticked by TCK_EPH_VALID!</formate>
+    </Log>
+	<Log>
+      <id>11</id>
+      <formate>chl%d:sv%d is ticked by TCK_PHASE!</formate>
+    </Log>
+	<Log>
+      <id>10</id>
+      <formate>chl%d:sv%d is ticked by TCK_ION!</formate>
+    </Log>
+	<Log>
+      <id>9</id>
+      <formate>chl%d:sv%d is ticked by TCK_CNR!</formate>
+    </Log>
+	<Log>
+      <id>8</id>
+      <formate>chl%d:sv%d is ticked by TCK_URA!</formate>
+    </Log>
+	<Log>
+      <id>7</id>
+      <formate>chl%d:sv%d is ticked by TCK_ELE!</formate>
+    </Log>
+	<Log>
+      <id>6</id>
+      <formate>chl%d:sv%d is ticked by TCK_EPH_TOE!</formate>
+    </Log>
+	<Log>
+      <id>5</id>
+      <formate>chl%d:sv%d is ticked by TCK_EPH_TIME!</formate>
+    </Log>
+	<Log>
+      <id>4</id>
+      <formate>chl%d:sv%d is ticked by TCK_HEAL!</formate>
+    </Log>
+	<Log>
+      <id>3</id>
+      <formate>chl%d is ticked by TCK_TRK2_CCBF!</formate>
+    </Log>
+	<Log>
+      <id>2</id>
+      <formate>chl%d is ticked by TCK_TRK1_CCB!</formate>
+    </Log>
+    <Log>
+      <id>1</id>
+      <formate>chl%d is ticked by TCK_TRK_NULL!</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x71">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x7F">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x80">
+	<Log>
+      <id>1</id>
+      <formate>sv%d nav:0x%08X 0x%08X 0x%08X 0x%08X 0x%08X 0x%08X 0x%08X 0x%08X 0x%08X 0x%08X</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x81">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x82">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x8F">
+    <Log>
+      <id>3</id>
+      <formate>sv%d Crc is failed! idx%d:0x%08X</formate>
+    </Log>
+	<Log>
+      <id>2</id>
+      <formate>sv%d Crc is failed! idx2:0x%08X idx6:0x%08X</formate>
+    </Log>
+    <Log>
+      <id>1</id>
+      <formate>sv%d Crc is failed! idx1:0x%08X</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x90">
+	<Log>
+      <id>1</id>
+      <formate>chl%d, sv = %d, bit = %u, ms = %u, chip = %u, nco = %u, intp = %d, decp = %u, fd = %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x91">
+	<Log>
+      <id>1</id>
+      <formate>chl%d, sv = %d, sow = %d, frm = %u, bit = %u, ms = %u, chip = %u, nco = %u, intp = %d, decp = %u, fd = %d, cnr = %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x92">
+	<Log>
+      <id>1</id>
+      <formate>chl%d, wn = %d, pse1 = %f, pse2 = %f, phase1 = %.3f, phase2 = %.3f, ins doppler1 = %.3f, ins doppler2 = %.3f, int doppler1 = %.3f, int doppler2 = %.3f, cnr = %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0x93">
+  </mmLogTable>
+  <mmLogTable submoduleId="0x9F">
+	<Log>
+      <id>1</id>
+      <formate>sv%d chl%d is tracking failed!-%02X</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xA0">
+	<Log>
+      <id>13</id>
+      <formate>chl%d:sv%d is ticked by TCK_PLI!</formate>
+    </Log>
+	<Log>
+      <id>12</id>
+      <formate>chl%d:sv%d is ticked by TCK_EPH_VALID!</formate>
+    </Log>
+	<Log>
+      <id>11</id>
+      <formate>chl%d:sv%d is ticked by TCK_PHASE!</formate>
+    </Log>
+	<Log>
+      <id>10</id>
+      <formate>chl%d:sv%d is ticked by TCK_ION!</formate>
+    </Log>
+	<Log>
+      <id>9</id>
+      <formate>chl%d:sv%d is ticked by TCK_CNR!</formate>
+    </Log>
+	<Log>
+      <id>8</id>
+      <formate>chl%d:sv%d is ticked by TCK_URA!</formate>
+    </Log>
+	<Log>
+      <id>7</id>
+      <formate>chl%d:sv%d is ticked by TCK_ELE!</formate>
+    </Log>
+	<Log>
+      <id>6</id>
+      <formate>chl%d:sv%d is ticked by TCK_EPH_TOE!</formate>
+    </Log>
+	<Log>
+      <id>5</id>
+      <formate>chl%d:sv%d is ticked by TCK_EPH_TIME!</formate>
+    </Log>
+	<Log>
+      <id>4</id>
+      <formate>chl%d:sv%d is ticked by TCK_HEAL!</formate>
+    </Log>
+	<Log>
+      <id>3</id>
+      <formate>chl%d is ticked by TCK_TRK2_CCBF!</formate>
+    </Log>
+	<Log>
+      <id>2</id>
+      <formate>chl%d is ticked by TCK_TRK1_CCB!</formate>
+    </Log>
+    <Log>
+      <id>1</id>
+      <formate>chl%d is ticked by TCK_TRK_NULL!</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xA1">
+  </mmLogTable>
+  <mmLogTable submoduleId="0xAF">
+  </mmLogTable>
+  <mmLogTable submoduleId="0xB0">
+  </mmLogTable>
+  <mmLogTable submoduleId="0xB1">
+  </mmLogTable>
+  <mmLogTable submoduleId="0xB2">
+  </mmLogTable>
+  <mmLogTable submoduleId="0xBF">
+  </mmLogTable>
+  <mmLogTable submoduleId="0xC0">
+   	<Log>
+      <id>1</id>
+      <formate>sv%d's info is saved, toe = %d, toa = %d!</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xCF">
+   	<Log>
+      <id>1</id>
+      <formate>sv%d's info is save failed! crc1 = 0x%02X, crc2 = 0x%02X</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xD0">
+   	<Log>
+      <id>1</id>
+      <formate>RECOM SYS IN TRA, unsearch sv stat: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>sv stat: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>sv stat: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>SV ERR/WARN STAT: %d,%d,%d...%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>SV WARN: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>6</id>
+      <formate>VIS SV, num:%d, sv:%d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>7</id>
+      <formate>sv: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>8</id>
+      <formate>sv: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>9</id>
+      <formate>bit lck %d, fra sync %d, rst stat %d</formate>
+    </Log>
+   	<Log>
+      <id>10</id>
+      <formate>chl occ by csr: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>11</id>
+      <formate>SV STATUS ALL: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>12</id>
+      <formate>STATUS: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>13</id>
+      <formate>STATUS: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>14</id>
+      <formate>cnr: %2d,%2d,%2d,%2d,%2d,%2d,%2d,%2d,%2d,%2d</formate>
+    </Log>
+   	<Log>
+      <id>15</id>
+      <formate>pli lst: %3d,%3d,%3d,%3d,%3d,%3d,%3d,%3d,%3d,%3d</formate>
+    </Log>
+   	<Log>
+      <id>16</id>
+      <formate>Task, task cnter of each type: %d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>17</id>
+      <formate>chl occ stat(pvt): %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>18</id>
+      <formate>chl sv rec(pvt): %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xD1">
+   	<Log>
+      <id>1</id>
+      <formate>px %d, free chl by res, prn now</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>num: %d, sv: %d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>free chl by tgt, pv val: %d, free num: %d</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>Convert to hot start(sv num %d, fra syn %d, ir %d, ok cnt %d)</formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>set time in ccbf! sv_sow %d, chl %d</formate>
+    </Log>
+   	<Log>
+      <id>6</id>
+      <formate>Reset ir cnter %d to 0</formate>
+    </Log>
+   	<Log>
+      <id>7</id>
+      <formate>Reset recom_cyc_cnter %d to 0 </formate>
+    </Log>
+   	<Log>
+      <id>8</id>
+      <formate>suc num cur %d, pre %d, unsearch num %d</formate>
+    </Log>
+   	<Log>
+      <id>9</id>
+      <formate>new suc lst: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>10</id>
+      <formate>ACQ CNR, add sv %d to vis lst, vis idx %d, cnr %d, vis num %d </formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xD2">
+   	<Log>
+      <id>1</id>
+      <formate>CHL STATE, acq sv %d fail!</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>acq2trk loss(chl %d, csr11 %d)</formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>chl %d, sv %d stat chg from %d to 5, csr11 %x, ir: %d</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>acq2trk fail with a invalid prn %d!</formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>SV STATUS, acq fail, chl %d, sv %d, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>6</id>
+      <formate>acq fail with a invalid prn %d!</formate>
+    </Log>
+   	<Log>
+      <id>7</id>
+      <formate>acq fail with a invalid prn!</formate>
+    </Log>
+   	<Log>
+      <id>8</id>
+      <formate>chl %d is free by bb, sv %d, sv rec %d, chl occ stat %d, sv status %d, loss cnt %d</formate>
+    </Log>
+   	<Log>
+      <id>9</id>
+      <formate>chl %d (sv %d) is free by bb</formate>
+    </Log>
+   	<Log>
+      <id>10</id>
+      <formate>chl %d (sv %d) released by bb from trk status, pli %d, sv status %d, chl occ %d, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>11</id>
+      <formate>SV STATUS, sv %d chg to status %d</formate>
+    </Log>
+   	<Log>
+      <id>12</id>
+      <formate>sv %d, chl %d trk fail, unsearch num %d!</formate>
+    </Log>
+   	<Log>
+      <id>13</id>
+      <formate>chl %d (sv %d) realeased by bb, pli %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xD3">
+   	<Log>
+      <id>1</id>
+      <formate>acq cnter of sv %d is too large, reset to 0!</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>####RESET acq recom cnter to 0! (recom %d, ir %d)####</formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>acq set(big end)=0x%08X, chl=%d, sv=%d, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>no enough unsearch num, reset recom lst, suc num %d, fail num %d, unsearch num %d, recom cyc cnter %d</formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>reset acq cnter %d of sv %d!</formate>
+    </Log>
+   	<Log>
+      <id>6</id>
+      <formate>sv %d recom, sig lvl %d, doppler %d, dopp err %d, DIS %d, idle chl %d, chl_idx %d, dcxo %d</formate>
+    </Log>
+   	<Log>
+      <id>7</id>
+      <formate>COLD START: unsearch num decrease to 0!</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xD4">
+   	<Log>
+      <id>1</id>
+      <formate>DEBUG RECOM, no valid sv, unsearch num %d, recom prn %d</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>sv status all: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>status: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>status: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>no valiid sv! reset cold st recom lst!</formate>
+    </Log>
+   	<Log>
+      <id>6</id>
+      <formate>ACQ, %d ready to change mode 2, prn %d, state %d</formate>
+    </Log>
+   	<Log>
+      <id>7</id>
+      <formate>####RESET all sv recom cnter (min %d, mode %d, ir %d)####</formate>
+    </Log>
+   	<Log>
+      <id>8</id>
+      <formate>ACQ by vis state, vis num %d, sv %d, recom_cnter %d</formate>
+    </Log>
+   	<Log>
+      <id>9</id>
+      <formate>ACQ by loss trk, sv %d, loss timer %d</formate>
+    </Log>
+   	<Log>
+      <id>10</id>
+      <formate>ACQ CNR STATE, sv %d, cnr_sum %d, cnr_cnter %d, cnr_latest %d, cnr_mean %d, sig_lvl %d, cnr_sum %f</formate>
+    </Log>
+   	<Log>
+      <id>11</id>
+      <formate>ACQ STATE, mh recom, cnt %d, sv %d, elvl %d, elvl idx %d, loss %d, loss pri %d, info %d, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>12</id>
+      <formate>ACQ STATE, mn recom, sv %d, elvl %d, elvl idx %d, loss %d, loss pri %d, info %d, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>13</id>
+      <formate>ACQ STATE, mf recom, sv %d, state %d, recom cnt %d, elvl %d, loss %d, loss pri %d, info %d, ir %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xD5">
+   	<Log>
+      <id>1</id>
+      <formate>IR DEBUG, ir acc num %d, t4 %d, cur sow %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xD6">
+   	<Log>
+      <id>1</id>
+      <formate>KF INIT, px %f, vx %f, tk %f, tdk %f</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xD7">
+   	<Log>
+      <id>1</id>
+      <formate>sv%d crc:%08X %08X %08X %08X %08X %08X %08X %08X %08X %08X</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>sv%d crc fail! idx1:0x%08X</formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>chl %d, sv %d, fra %d rcvd TOW %d</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>sv%d crc fail! idx2:0x%08X, idx6:0x%08X</formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>sv %d crc fail! idx%d:0x%08X</formate>
+    </Log>
+   	<Log>
+      <id>6</id>
+      <formate>sv %d crc fail! idx%d:0x%08X</formate>
+    </Log>
+   	<Log>
+      <id>7</id>
+      <formate>sv %d crc fail! idx%d:0x%08X</formate>
+    </Log>
+   	<Log>
+      <id>8</id>
+      <formate>sv %d crc fail! idx%d:0x%08X</formate>
+    </Log>
+   	<Log>
+      <id>9</id>
+      <formate>sv %d crc fail! idx%d:0x%08X</formate>
+    </Log>
+   	<Log>
+      <id>10</id>
+      <formate>ready to push eph save task, sv idx %d, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>11</id>
+      <formate>ready to push alm save task, sv idx %d, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>12</id>
+      <formate>PR ABS CHK, num %d, idx: %d, %d, %d, pr %d, %d, %d</formate>
+    </Log>
+   	<Log>
+      <id>13</id>
+      <formate>ALL, num %d, pr: %d, %d, %d, %d, %d, %d, %d</formate>
+    </Log>
+   	<Log>
+      <id>14</id>
+      <formate>chl %d, dp ca %f, pre %f, dp dir %f, pre %f, dp diff %f</formate>
+    </Log>
+   	<Log>
+      <id>15</id>
+      <formate>DEBUG DOPP, chl %d dopp %f error! ir acc time %f</formate>
+    </Log>
+   	<Log>
+      <id>16</id>
+      <formate>ION ERROR, %f, chl %d, sv %d, px %f, ele %f</formate>
+    </Log>
+   	<Log>
+      <id>17</id>
+      <formate>TROP ERROR, %f, chl %d, sv %d, px %f, ele %f</formate>
+    </Log>
+   	<Log>
+      <id>18</id>
+      <formate>SV INFO (rm):%d, %d, %d, %d, %d, %d, %d, %d, %d, %d</formate>
+    </Log>
+   	<Log>
+      <id>19</id>
+      <formate>PRN NOW (rm):%d, %d, %d, %d, %d, %d, %d, %d, %d, %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xD8">
+   	<Log>
+      <id>1</id>
+      <formate>Esimate nav --> chl%d-0x%08X, %d, %d</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>Esimate nav --> frm4-error %X %d</formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>Esimate nav --> chl%d frm3 %x, %d</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>Esimate nav --> frm5-error %X %d</formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>Esimate nav --> chl%d frm4 %x %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xD9">
+   	<Log>
+      <id>1</id>
+      <formate>SV INFO: chl %d is rej due to inval prn %d!</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>SV INFO: chl %d is rej due to bit lck %d!</formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>SV INFO: chl %d is rej due to fra-sync(mode %d, eph val %d, recon flag %d)!</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>SV INFO: chl %d(sv %d) is rej due to healthy!</formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>SV INFO: sv %d(chl %d) is rej due to large time diff between sow and eph time!</formate>
+    </Log>
+   	<Log>
+      <id>6</id>
+      <formate>SV INFO: sv %d(chl %d) is rej due to large time diff between sv time and toe!</formate>
+    </Log>
+   	<Log>
+      <id>7</id>
+      <formate>SV INFO: sv %d(chl %d) is rej due to ura %d!</formate>
+    </Log>
+   	<Log>
+      <id>8</id>
+      <formate>SV INFO: sv %d(chl %d) is rej due to inval cnr %d!</formate>
+    </Log>
+   	<Log>
+      <id>9</id>
+      <formate>SV INFO: sv %d(chl %d) is rej due to ele %f!</formate>
+    </Log>
+   	<Log>
+      <id>10</id>
+      <formate>SV INFO: sv %d(chl %d) is rej due to pli %d!</formate>
+    </Log>
+   	<Log>
+      <id>11</id>
+      <formate>SV INFO: sv %d(chl %d) is rej due to inval eph!</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xDA">
+   	<Log>
+      <id>1</id>
+      <formate>mode is error! mode = %d!</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>pos rec clear ok, crc 0x%02x, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>rec init idx %d,%d,%d,%d, final px %d, px per lvl %d</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>sv %d info save fail! crc1 = 0x%02X,  crc2 = 0x%02X</formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>The input init start mode is %d, proc %d sys true start mode %d</formate>
+    </Log>
+   	<Log>
+      <id>6</id>
+      <formate>Init RTC %d-%d-%d, %d-%d-%d</formate>
+    </Log>
+   	<Log>
+      <id>7</id>
+      <formate>fail to rtc chk, reset hot to cold!</formate>
+    </Log>
+   	<Log>
+      <id>8</id>
+      <formate>rcvr info read ok! p_xyzt %f,%f %f, %f, dcxo %f </formate>
+    </Log>
+   	<Log>
+      <id>9</id>
+      <formate>No val Ion info, init by dft cfg!</formate>
+    </Log>
+   	<Log>
+      <id>10</id>
+      <formate>####Erase flash in cold start mode!####</formate>
+    </Log>
+   	<Log>
+      <id>11</id>
+      <formate>sv %d info save ok, toe = %d, toa = %d!</formate>
+    </Log>
+   	<Log>
+      <id>12</id>
+      <formate>pos rec read ok, crc 0x%02x, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>13</id>
+      <formate>DEBUG R AVE, idx %d,%d,%d,%d final px %f, px per lvl %f</formate>
+    </Log>
+   	<Log>
+      <id>14</id>
+      <formate>pos rec read fail, reset mem, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>15</id>
+      <formate>pos rec save ok, crc: 0x%02x, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>16</id>
+      <formate>DEBUG R AVE, SAVE, idx %d,%d,%d,%d, final px %f, px per lvl %f</formate>
+    </Log>
+   	<Log>
+      <id>17</id>
+      <formate>warn! too much nav task!(num %d, ir %d)</formate>
+    </Log>
+   	<Log>
+      <id>18</id>
+      <formate>RESET ALL! pos now %f, %f, %f</formate>
+    </Log>
+   	<Log>
+      <id>19</id>
+      <formate>CHL TIME, %d, %f, %f</formate>
+    </Log>
+   	<Log>
+      <id>20</id>
+      <formate>CHL PR, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d</formate>
+    </Log>
+   	<Log>
+      <id>21</id>
+      <formate>eph ok sv, num %d, sv: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>22</id>
+      <formate>sv: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>23</id>
+      <formate>sv: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>24</id>
+      <formate>alm ok sv, num %d, sv: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>25</id>
+      <formate>sv: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>26</id>
+      <formate>sv: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>27</id>
+      <formate>init usr pos %f, %f, %f, vel %f, %f, %f, local sow %f</formate>
+    </Log>
+   	<Log>
+      <id>28</id>
+      <formate>sv p_xyz %f,%f,%f v_xyz %f,%f,%f, toc %d, dopp %d, dcxo %d</formate>
+    </Log>
+   	<Log>
+      <id>29</id>
+      <formate>start mode %d before pvt init</formate>
+    </Log>
+   	<Log>
+      <id>30</id>
+      <formate>warn! conflict obs and nav ta, reset to 0! (num %d, ir %d)</formate>
+    </Log>
+   	<Log>
+      <id>31</id>
+      <formate>warn! too much obs task, reset to 1!(num %d, ir %d)</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xDB">
+   	<Log>
+      <id>1</id>
+      <formate>----rtc chk ok, ready to hot start!----</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>----start to recons process(ir %d)----</formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>HOT START, input pos in recons, %f, %f, %f</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>HOT START, trk/cnr: %x,%d..%x,%d..%x,%d..%x,%d..%x,%d</formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>HOT START, trk/cnr: %x,%d..%x,%d..%x,%d..%x,%d..%x,%d</formate>
+    </Log>
+   	<Log>
+      <id>6</id>
+      <formate>local sv time, wn %d, isow %d, tsow %f, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>7</id>
+      <formate>sv %d eph time %d, %d, toe %d, iode %d, diff time %d</formate>
+    </Log>
+   	<Log>
+      <id>8</id>
+      <formate>cur sv %d, chl %d, prn %d</formate>
+    </Log>
+   	<Log>
+      <id>9</id>
+      <formate>cur prn %d, pdt %f, diff pdt %f, diff obs %f, db diff %f</formate>
+    </Log>
+   	<Log>
+      <id>10</id>
+      <formate>cur prn %d had recons to %f(br1)!</formate>
+    </Log>
+   	<Log>
+      <id>11</id>
+      <formate>cur prn %d had recons to %f(br2)!</formate>
+    </Log>
+   	<Log>
+      <id>12</id>
+      <formate>cur prn %d had recons to %f(br3)!</formate>
+    </Log>
+   	<Log>
+      <id>13</id>
+      <formate>----start to recompue sv pv!----</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xDC">
+   	<Log>
+      <id>1</id>
+      <formate>To rebase, inval num %d, val num %d, sv/db_diff: %d,%f..%d,%f..%d,%f..%d,%f</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>sv/db_diff: %d,%f..%d,%f..%d,%f..%d,%f..%d,%f</formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>RECON, inval num %d, base idx %d, chl/sv: %d,%d..%d,%d..%d,%d..%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>chl/sv: %d,%d..%d,%d..%d,%d..%d,%d..%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>inval num %d, val num %d, DB DIFF: %d,%f..%d,%f..%d,%f..%d,%f..%d,%f</formate>
+    </Log>
+   	<Log>
+      <id>6</id>
+      <formate>DB DIFF: %d,%f..%d,%f..%d,%f..%d,%f..%d,%f</formate>
+    </Log>
+   	<Log>
+      <id>7</id>
+      <formate>val num %d, Aft recons, sv/pr: %d,%f..%d,%f..%d,%f..%d,%f</formate>
+    </Log>
+   	<Log>
+      <id>8</id>
+      <formate>Aft recons, sv/pr: %d,%f..%d,%f..%d,%f..%d,%f..%d,%f</formate>
+    </Log>
+   	<Log>
+      <id>9</id>
+      <formate>top iter %d, inn iter %d, p_xy %f, %f, rtc_bias %f, clk_bias %f</formate>
+    </Log>
+   	<Log>
+      <id>10</id>
+      <formate>val num %d, final res: %f,%f,%f,%f,%f,%f,%f,%f,%f,%f </formate>
+    </Log>
+   	<Log>
+      <id>11</id>
+      <formate>time corr rtc %f, tk %f</formate>
+    </Log>
+   	<Log>
+      <id>12</id>
+      <formate>----REONS, val %d, fra-sync %d----</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xDD">
+   	<Log>
+      <id>1</id>
+      <formate>set time:cyc=%d, misec=%d, inmss=%d</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>modify time:misec=%d,inmsss=%d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xDE">
+   	<Log>
+      <id>1</id>
+      <formate>CHL TIME, %d, %f, %f</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>CHL PR, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>CHL CA, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>CHL DOPP, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>SV PR, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>6</id>
+      <formate>CHL PRCA DB DIFF, %f, %f, %f, %f, %f, %f, %f, %f, %f, %f, ir %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xDF">
+   	<Log>
+      <id>1</id>
+      <formate>RESET KF, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>RESET KF BY POS DIFF, diff %f, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>ready to store rcvr info, ir_cnter %d, px %f, val td %d, dcxo %f</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>rcvr info store ok! ir %d</formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>####First PVT! p_xyzt %f, %f, %f, %f, v %f, delta_ir %d, ir %d, sv num %d####</formate>
+    </Log>
+   	<Log>
+      <id>6</id>
+      <formate>EMPTY POS AVE, return 0! ave num %d, f_ave num %d, top ratio %f, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>7</id>
+      <formate>DEBUG R AVE, tot cnt %d, xyz %f, %f, %f, idx %d,%d,%d,%d ir %d</formate>
+    </Log>
+   	<Log>
+      <id>8</id>
+      <formate>AVE ALL, p_xyz %f, %f, %f, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>9</id>
+      <formate>AVE ROUND, cur_p %f, %f, %f, idx %d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>10</id>
+      <formate>DCXO RENEW, var %f, mean %f, now %f!</formate>
+    </Log>
+   	<Log>
+      <id>11</id>
+      <formate>val num %d, each dcxo %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>12</id>
+      <formate>DCXO RENEW, DCXO %f, ir %d!</formate>
+    </Log>
+   	<Log>
+      <id>13</id>
+      <formate>READY TO MODIFY TIME, mfy time(s) %f, fDat %f</formate>
+    </Log>
+   	<Log>
+      <id>14</id>
+      <formate>new add sv %d with max db_diff %f, old ave %f, px %f, sus %d</formate>
+    </Log>
+   	<Log>
+      <id>15</id>
+      <formate>wait to modify time, tk %f</formate>
+    </Log>
+   	<Log>
+      <id>16</id>
+      <formate>RESET kf clk init flag! ir %d</formate>
+    </Log>
+   	<Log>
+      <id>17</id>
+      <formate>----ready to recons obs range(px %f, lck num %d, val num %d, ir %d)----</formate>
+    </Log>
+   	<Log>
+      <id>18</id>
+      <formate>PVT FAIL! mode %d , sv num %d, px %f, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>19</id>
+      <formate>WARN, 4 state PR RES </formate>
+    </Log>
+   	<Log>
+      <id>20</id>
+      <formate>4 state PR RES </formate>
+    </Log>
+   	<Log>
+      <id>21</id>
+      <formate>val num %d, res: %f, %f, %f, %f, %f, %f, %f, %f, %f, %f</formate>
+    </Log>
+   	<Log>
+      <id>22</id>
+      <formate>dynamic test fail! localT, wn %d, sow %d, sow_d %f</formate>
+    </Log>
+   	<Log>
+      <id>23</id>
+      <formate>val num %d, sv prn: %d, %d, %d, %d, %d, %d, %d, %d, %d, %d</formate>
+    </Log>
+   	<Log>
+      <id>24</id>
+      <formate>PV, px %f, vx %f, tk %f, vtk %f, gdop %f, ab sv %d, sv num %d, val flag %d</formate>
+    </Log>
+   	<Log>
+      <id>25</id>
+      <formate>PV, val num %d, prn: %d.%d.%d.%d.%d.%d.%d.%d.%d.%d</formate>
+    </Log>
+   	<Log>
+      <id>26</id>
+      <formate>PV, dcxo %f(suc num %d, warn type %d, ir %d)</formate>
+    </Log>
+   	<Log>
+      <id>27</id>
+      <formate>PDT DB DIFF, dur %fms, px %f</formate>
+    </Log>
+   	<Log>
+      <id>28</id>
+      <formate>val num %d, sv/db_diff: %d,%f..%d,%f..%d,%f..%d,%f..%d,%f </formate>
+    </Log>
+   	<Log>
+      <id>29</id>
+      <formate>sv/db_diff: %d,%f..%d,%f..%d,%f..%d,%f..%d,%f</formate>
+    </Log>
+   	<Log>
+      <id>30</id>
+      <formate>tot pr ave %f, match sv num %d, match pr ave %f, dcxo ave %f, dcxo var %f </formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xE0">
+   	<Log>
+      <id>1</id>
+      <formate>ATTENION! NEED TO RENEW DCXO! (ir %d)</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>attention! too much busy sv!(%d num, ir %d) </formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>busy prn: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>busy stat: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>sv rec: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>6</id>
+      <formate>busy sv %d status %d (cnter %d) had reset to unknown(by lck)</formate>
+    </Log>
+   	<Log>
+      <id>7</id>
+      <formate>busy sv %d status %d (cnter %d) had reset to unknown(by stat cnt)</formate>
+    </Log>
+   	<Log>
+      <id>8</id>
+      <formate>ATTENTION! obs info proc in diff ir(%d, %d)!</formate>
+    </Log>
+   	<Log>
+      <id>9</id>
+      <formate>attention! no val delta time in obs proc! ir %d</formate>
+    </Log>
+   	<Log>
+      <id>10</id>
+      <formate>attention! large deltaT %f in chlProc </formate>
+    </Log>
+   	<Log>
+      <id>11</id>
+      <formate>attention! acq fb abnormal! force to reset sv %d, sv status %d. chl occ %d to none, csr11 %x</formate>
+    </Log>
+   	<Log>
+      <id>12</id>
+      <formate>attention! trk status renew abnormal! (chl_sv %d, r_sv %d status %d) </formate>
+    </Log>
+   	<Log>
+      <id>13</id>
+      <formate>ATTENTION! get a sv with err prn %d, chl %d</formate>
+    </Log>
+   	<Log>
+      <id>14</id>
+      <formate>attention! trk fb abnormal, force to reset sv %d, sv status %d, chl occ %d to none, csr11 %x</formate>
+    </Log>
+   	<Log>
+      <id>15</id>
+      <formate>attention! obs proc in diff ir(%d, %d)!</formate>
+    </Log>
+   	<Log>
+      <id>16</id>
+      <formate>attention! nav proc in diff ir(%d, %d)</formate>
+    </Log>
+   	<Log>
+      <id>17</id>
+      <formate>PR CHK, pr: %d, %d, %d, %d, %d, %d, %d, %d, %d, %d</formate>
+    </Log>
+   	<Log>
+      <id>18</id>
+      <formate>ATTENTION! RESET ALL BY PR CHK, ir %d! </formate>
+    </Log>
+   	<Log>
+      <id>19</id>
+      <formate>ATTENTION! FREE CHL BY PR CHK, sv %d, chl %d, pr %d, pr_ave %d, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>20</id>
+      <formate>PR CHK, pr: %d, %d, %d, %d, %d, %d, %d, %d, %d, %d</formate>
+    </Log>
+   	<Log>
+      <id>21</id>
+      <formate>ATTENTION! FREE CHL BY ABS CHL, ok ave %d, prn %d, chl %d, pr %d</formate>
+    </Log>
+   	<Log>
+      <id>22</id>
+      <formate>ATTENTION! large sv var! sv %d, var %f, %f, %f</formate>
+    </Log>
+   	<Log>
+      <id>23</id>
+      <formate>ATTENTION! pos rec save fail! ir %d, crc 0x%02x, 0x%02x</formate>
+    </Log>
+   	<Log>
+      <id>24</id>
+      <formate>****ATTENTION! Large pos diff (ir %d, suc num %d, pos r %f, dur %f(ms))!</formate>
+    </Log>
+   	<Log>
+      <id>25</id>
+      <formate>pos diff %f, cur vel %f, pos pre %f, sv num pre %d, sv lst %d,%d,%d,%d,%d,%d delta ir %d</formate>
+    </Log>
+   	<Log>
+      <id>26</id>
+      <formate>attention, LARGE ERR POS CNTER REC(%f, %f, diff pos %d, ir %d)</formate>
+    </Log>
+   	<Log>
+      <id>27</id>
+      <formate>****ATTENTION! Large acc (%f m/s2, v now: %f, v pre %f, time_diff %fms, ir %d)</formate>
+    </Log>
+   	<Log>
+      <id>28</id>
+      <formate>ATTENTION! large ave diff! final %f, ir %d!</formate>
+    </Log>
+   	<Log>
+      <id>29</id>
+      <formate>ATTENTION! large dcxo var %f! mean %f, now %f</formate>
+    </Log>
+   	<Log>
+      <id>30</id>
+      <formate>val num %d, dcxo each %f,%f,%f,%f,%f,%f,%f,%f,%f,%f</formate>
+    </Log>
+   	<Log>
+      <id>31</id>
+      <formate>ATTENTION! free bb by dcxo var %f, sv %d, chl %d, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>32</id>
+      <formate>ATTENTION! free bb by warn, sv %d, chl %d, warm type %d, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>33</id>
+      <formate>attention! chi-sqr fail!(stat num %d, ite num %d, vv %f)</formate>
+    </Log>
+   	<Log>
+      <id>34</id>
+      <formate>val num %d, pr res: %f,%f,%f,%f,%f,%f,%f,%f,%f,%f</formate>
+    </Log>
+   	<Log>
+      <id>35</id>
+      <formate>ATTENTION! too much error pvt! ready to free chl, iter %d, alt %f, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>36</id>
+      <formate>val num %d, prn: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>37</id>
+      <formate>ATTENTION! free bb by gdop, sv %d, chl %d, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>38</id>
+      <formate>ATTENTION! get an ab pr chl %d, sv %d, to be free, ir %d, old ave %f, db cur %f</formate>
+    </Log>
+   	<Log>
+      <id>39</id>
+      <formate>ATTENTION! free bb by raim, sv %d, chl %d, cnt %d, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>40</id>
+      <formate>ATTENTION! large mfy! cur px: %f, vx %f, dop %f, sv num %d, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>41</id>
+      <formate>ATTENTION, too long to pvt, reset %d mode to cold start, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>42</id>
+      <formate>RECON ATTENTION! large recon fail cnt %d!</formate>
+    </Log>
+   	<Log>
+      <id>43</id>
+      <formate>ATTENTION! recon fail due to enough sv(val %d, base idx %d)!</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xE1">
+   	<Log>
+      <id>1</id>
+      <formate>WARNING! reset an abnormal chl! (pli %d, bit_loss_lck_timer %d, ir_cnter %d)</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>WARNING! no free space to store vis sv, need recal sv pv! sv_num: %d </formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>WARNING! detect sv status stack in acq busy(%d num) busy sv!</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>ab prn, status, cnter: %d,%d,%d...%d,%d,%d...%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>WARNING! acq fail state conflict! (chl %d, csr11 %d)</formate>
+    </Log>
+   	<Log>
+      <id>6</id>
+      <formate>WARNING! multi chls work with the same sv! chl/stat %d,%d.. %d,%d</formate>
+    </Log>
+   	<Log>
+      <id>7</id>
+      <formate>prn all: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>8</id>
+      <formate>chl stat: %d,%d,%d,%d,%d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>9</id>
+      <formate>FREE CHL %d by multi chl chk, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>10</id>
+      <formate>warning! large init pr diff! cur %f, smooth %f, diff %f</formate>
+    </Log>
+   	<Log>
+      <id>11</id>
+      <formate>warning! no vis sv in hot start recom!</formate>
+    </Log>
+   	<Log>
+      <id>12</id>
+      <formate>WARNING! large vis sv num %d, sus sv num %d, reset part of unstable vis sv!</formate>
+    </Log>
+   	<Log>
+      <id>13</id>
+      <formate>warning! too long to get time mfy! diff_cnt %d, auto reset mfy time flag!</formate>
+    </Log>
+   	<Log>
+      <id>14</id>
+      <formate>****WARNING! over iter in LS(mode %d, iter %d)****</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xE2">
+   	<Log>
+      <id>1</id>
+      <formate>xxxxERROR! too much ir interval need to br proc! (ir %d, num %d)xxxx</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>ERROR! too much ir (%d) need to be proc (ir now %d)! RESET!</formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>error! no valid loss state for acq recom! (ir %d, lck recom flag %d, min trkT %d)</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>ERROR! can't get free idx in pr chk! ir %d </formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>xxxxerror! no valid sv for hot start!xxxx</formate>
+    </Log>
+   	<Log>
+      <id>6</id>
+      <formate>xxxxERROR! unreco mode %d to sv pv, prn %d!xxxx</formate>
+    </Log>
+   	<Log>
+      <id>7</id>
+      <formate>xxxxERROR! unreco system in sv pv!xxxx</formate>
+    </Log>
+   	<Log>
+      <id>8</id>
+      <formate>xxxxERROR! unreco scene %d!xxxx</formate>
+    </Log>
+   	<Log>
+      <id>9</id>
+      <formate>xxxxERROR! undefined proc sys %d in task schd!xxxx</formate>
+    </Log>
+   	<Log>
+      <id>10</id>
+      <formate>xxxxERROR! malloc fail in pvt!xxxx</formate>
+    </Log>
+   	<Log>
+      <id>11</id>
+      <formate>error! pos rec clear fail, ir %d, crc 0x%02x, 0x%02x</formate>
+    </Log>
+   	<Log>
+      <id>12</id>
+      <formate>ERROR! erase flash fail! sv idx %d, read crc %d, save crc %d</formate>
+    </Log>
+   	<Log>
+      <id>13</id>
+      <formate>error! rcvr info save fail! crc 0x%02x, 0x%02x, ir %d</formate>
+    </Log>
+   	<Log>
+      <id>14</id>
+      <formate>ERROR! NAN! pos now %f, %f, %f</formate>
+    </Log>
+   	<Log>
+      <id>15</id>
+      <formate>****error! large time cor! (i_part %f, d_part %f)****</formate>
+    </Log>
+   	<Log>
+      <id>16</id>
+      <formate>****error! large vel (v %f m/s, ir %d)!****</formate>
+    </Log>
+   	<Log>
+      <id>17</id>
+      <formate>LSQ ERROR in vel! sv num %d, ir %d!</formate>
+    </Log>
+   	<Log>
+      <id>18</id>
+      <formate>LSQ ERROR in 5-state pos! sv num %d, ir %d!</formate>
+    </Log>
+   	<Log>
+      <id>19</id>
+      <formate>LSQ ERROR in 4-state pos! sv num %d, ir %d!</formate>
+    </Log>
+   	<Log>
+      <id>20</id>
+      <formate>ERROR! NAN COMP! pos cur %f, %f, %f, COM %f, num %d, sv %d,%d,%d,%d,%d,%d</formate>
+    </Log>
+   	<Log>
+      <id>21</id>
+      <formate>ERROR! fail to vel!</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xE3">
+   	<Log>
+      <id>1</id>
+      <formate>PV INFO, final comp of LSQ %f, cor time(ms) %f, iter cnter %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xE4">
+   	<Log>
+      <id>1</id>
+      <formate>inval time_diff for pdt db diff! time diff %f, cur sow %d, pre val sow %d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xE5">
+   	<Log>
+      <id>1</id>
+      <formate>RAIM, val sv num %d, res: %f,%f,%f,%f,%f,%f,%f,%f,%f,%f</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>RAIM, exclude sv %d</formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>RAIM, PV px %f, vx %f, tk %f</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>RAIM, val num %d, sv: %d.%d.%d.%d.%d.%d.%d.%d.%d.%d</formate>
+    </Log>
+  </mmLogTable>
+  <mmLogTable submoduleId="0xE6">
+   	<Log>
+      <id>1</id>
+      <formate>####All chl had fra sync, reset mode to 4-state lsq(fra-sync %d, val num %d)####</formate>
+    </Log>
+   	<Log>
+      <id>2</id>
+      <formate>No enough sv(%d) for recons</formate>
+    </Log>
+   	<Log>
+      <id>3</id>
+      <formate>****ambiguity relation between range in rec prange!(chl %d, sv %d)****</formate>
+    </Log>
+   	<Log>
+      <id>4</id>
+      <formate>RAIM, val num %d, sv: %d.%d.%d.%d.%d.%d.%d.%d.%d.%d</formate>
+    </Log>
+   	<Log>
+      <id>5</id>
+      <formate>RECON attention! fail to recon! val %d inval %d base %d</formate>
+    </Log>
+   	<Log>
+      <id>6</id>
+      <formate>Recon attention! base idx %d!</formate>
+    </Log>
+   	<Log>
+      <id>7</id>
+      <formate>No enough sv for hot st!</formate>
+    </Log>
+   	<Log>
+      <id>8</id>
+      <formate>REACQ in pr recons, num %d, chl: %d,%d,%d,%d,%d,%d</formate>
+    </Log>
+  </mmLogTable>
+</mmLogTables>
