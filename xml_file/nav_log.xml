@@ -627,7 +627,7 @@
     </Log>
    	<Log>
       <id>10</id>
-      <formate>ready to push eph save task, sv idx %d, ir %d</formate>
+      <formate>ready to push eph save task(by val renew), sv idx %d, ir %d</formate>
     </Log>
    	<Log>
       <id>11</id>
@@ -1120,6 +1120,10 @@
    	<Log>
       <id>30</id>
       <formate>tot pr ave %f, match sv num %d, match pr ave %f, dcxo ave %f, dcxo var %f </formate>
+    </Log>
+   	<Log>
+      <id>31</id>
+      <formate>ready to push eph save task(by pv), sv prn: %d, ir: %d</formate>
     </Log>
   </mmLogTable>
   <mmLogTable submoduleId="0xE0">
