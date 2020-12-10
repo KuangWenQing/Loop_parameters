@@ -1357,6 +1357,14 @@
       <id>14</id>
       <formate>****WARNING! over iter in LS(mode %d, iter %d)****</formate>
     </Log>
+    	<Log>
+      <id>15</id>
+      <formate>WARNING! FREE CHL BY FAKE! chl %d, %d, sv %d, %d, cnr %d, %d, px %d, %d</formate>
+    </Log>
+  	<Log>
+      <id>16</id>
+      <formate>WARNING! get an else item(%x) in chl proc (chl %d)!</formate>
+    </Log>
   </mmLogTable>
   <mmLogTable submoduleId="0xE2">
    	<Log>
