@@ -407,7 +407,7 @@
     </Log>
    	<Log>
       <id>3</id>
-      <formate>free chl by tgt, pv val: %d, free num: %d</formate>
+      <formate>free chl by tgt, pv val: %d, free num: %d, prn %d, eph val %d</formate>
     </Log>
    	<Log>
       <id>4</id>
@@ -1201,7 +1201,7 @@
     </Log>
    	<Log>
       <id>19</id>
-      <formate>ATTENTION! FREE CHL BY PR CHK, sv %d, chl %d, pr %d, pr_ave %d, ir %d</formate>
+      <formate>ATTENTION! FREE CHL BY PR CHK, sv %d, chl %d, val/warn num %d, %d, pr %d, pr_ave %d, ir %d</formate>
     </Log>
    	<Log>
       <id>20</id>
@@ -1298,6 +1298,10 @@
    	<Log>
       <id>43</id>
       <formate>ATTENTION! recon fail due to enough sv(val %d, base idx %d)!</formate>
+    </Log>
+   	<Log>
+      <id>44</id>
+      <formate>ATTENTION! rm sv in sv pv, val %d %d, warn %d %d</formate>
     </Log>
   </mmLogTable>
   <mmLogTable submoduleId="0xE1">
