@@ -1146,7 +1146,7 @@ if __name__ == '__main__':
     para_convert.gl_nDllSum2 = para_convert.gl_nDllSum2[:-8] + '};'
     print(para_convert.gl_nDllSum2)
 
-    fd = open("tmp.py", 'w')
+    fd = open("../tmp.py", 'w')
     fd.write(A.gl_nCn0 + '\n' + A.gl_nSmooth + '\n' + A.gl_nThreshold + '\n'
              + A.gl_nPll2 + '\n' + A.gl_nLongPll + '\n' + A.gl_nPll3 + '\n'
              + A.gl_nFll2 + '\n' + A.gl_nFll3 + '\n' + A.gl_nDllBit + '\n'
