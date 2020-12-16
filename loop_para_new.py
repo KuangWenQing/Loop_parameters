@@ -636,23 +636,22 @@ if __name__ == '__main__':
     # all_bn = np.array([1.0,0.6,0.5,0.4,0.3])# 2ms, 4ms, 10ms, 20ms, 100ms
     A = para_convert()
     '''for old track'''
-    pli_loss_th = 33
-    pll_bn_wide = [12, 7.5, 4.5, 3.3]
-    pll_bn_narrow = [9, 5.5, 3.0, 2.5, 0.8]
-    pll_long_bn = np.array([1.0, 1.0, 1.0, 1.0, 1.0])  # 1103
+    pll_bn_wide   = [16, 12, 5, 3.0]
+    pll_bn_narrow = [10, 7,  3, 2.5, 1.5]
+    pll_long_bn = np.array([2.0, 1.5, 1.5, 1.0, 1.0]) #1103
     smooth_fac_shift0 = 16
     smooth_fac_shift1 = 10
     fli_smooth_factor = np.array([0.1, 0.3])
     pli_smooth_factor = np.array([0.06, 0.06])
-    # gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.5, 20.0, 18.5, 17.0, 39.0, 39.0])
+    #gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.5, 20.0, 18.5, 17.0, 39.0, 39.0])
     # gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.5, 20.0, 18.5, 17.0, 39.0, 00.0]) # disable
     # gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.0, 19.5, 18.0, 16.5, 39.0, 39.0])  # enable 1103
     # gps_cn0_db = np.array([32.0, 28, 25, 22, 19, 17, 15, 13, 36.0, 50.0])  # enable 1103
-    gps_cn0_db = np.array([31.0, 27, 24, 21, 19, 17, 15, 13, 36.0, 50.0])  # enable 1103
-    # gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.5, 20.0, 18.5, 17.0, 39.0, 39.0])  # enable
+    gps_cn0_db = np.array([32.0, 28, 25, 22, 19, 17, 15, 13, 36.0, 50.0])  # enable 1103
+    #gps_cn0_db = np.array([33.0, 29.8, 27.3, 25.0, 22.5, 20.0, 18.5, 17.0, 39.0, 39.0])  # enable
     # gps_cn0_db = np.array([35.0, 31.0, 28.3, 26.0, 23.5, 21.0, 19.0, 17.0, 39.0, 35.0])
     narrow_dll_bn = 1.0
-    narrow_long_dll_bn = [narrow_dll_bn, 0.1, 0.1, 0.1, 0.05, 0.05]
+    narrow_long_dll_bn =[narrow_dll_bn, 0.1, 0.1, 0.1, 0.05, 0.05]
 
     smooth_fac_factor = list()
     smooth_fac_factor.append(16)
@@ -672,31 +671,29 @@ if __name__ == '__main__':
     fll3_sum_bn = np.array([[20], [16], [12.0]])
     pll3_bn = np.array([[28], [22], [18], [12], [6.0]])
 
-    # limit_cfg = [8, 50, 25, 12, 35, 22, 15, 12]
-    limit_cfg = [8, 50, 25, 12, pli_loss_th, 26, 16, 13]
+    #limit_cfg = [8, 50, 25, 12, 35, 22, 15, 12]
+    limit_cfg = [8, 50, 25, 12, 33, 26, 16, 13]
     print("the high state:")
-    result = A.cal(dll_sum_bn, pll_bn, pll_long_bn, pll3_bn, fll_sum_bn, fll3_sum_bn, dll_bn, fll_bn, fll3_bn,
-                   pll_bn_narrow, mode, rank, limit_cfg, gps_cn0_db, smooth_fac_factor)
+    result = A.cal(dll_sum_bn, pll_bn, pll_long_bn, pll3_bn, fll_sum_bn, fll3_sum_bn, dll_bn, fll_bn, fll3_bn, pll_bn_narrow, mode, rank, limit_cfg, gps_cn0_db, smooth_fac_factor)
 
     ###mid
     mode = 0
     rank = control.mid
     dll_bn = np.array([1.0])
     dll_sum_bn = np.array([1.2, 0.6]  # 0.6, 0.3, 0.15, 0.1
-                          + narrow_long_dll_bn)
+                           + narrow_long_dll_bn)
     fll_bn = np.array([1.5])
     fll_sum_bn = np.array([[20], [12], [5]])
     # pll_bn = np.array([[12], [8], [6], [4.5], [pll_group_4]])
-    pll_bn = np.array([[20], [pll_bn_wide[0]], [pll_bn_wide[1]], [pll_bn_wide[2]], [pll_bn_wide[3]]])
+    pll_bn = np.array([[16],  [pll_bn_wide[0]], [pll_bn_wide[1]], [pll_bn_wide[2]], [pll_bn_wide[3]]])
     fll3_bn = np.array([1.5])
     fll3_sum_bn = np.array([[16], [12], [6.0]])
     pll3_bn = np.array([[12], [8], [6], [5], [3]])
 
     # limit_cfg = [12, 100, 50, 16, 35, 22, 17, 12]
-    limit_cfg = [10, 100, 40, 16, pli_loss_th, 26, 16, 15]
+    limit_cfg = [10, 100, 40, 16, 33, 26, 16, 15]
     print("the middle state:")
-    result = A.cal(dll_sum_bn, pll_bn, pll_long_bn, pll3_bn, fll_sum_bn, fll3_sum_bn, dll_bn, fll_bn, fll3_bn,
-                   pll_bn_narrow, mode, rank, limit_cfg, gps_cn0_db, smooth_fac_factor)
+    result = A.cal(dll_sum_bn, pll_bn, pll_long_bn, pll3_bn, fll_sum_bn, fll3_sum_bn, dll_bn, fll_bn, fll3_bn, pll_bn_narrow, mode, rank, limit_cfg, gps_cn0_db, smooth_fac_factor)
 
     ###low
     mode = 0
@@ -705,7 +702,7 @@ if __name__ == '__main__':
     # dll_sum_bn = np.array([1.0, 0.2,
     #                        narrow_dll_bn, 0.05, 0.03, 0.02, 0.02, 0.01])
     dll_sum_bn = np.array([1.0, 0.2]
-                          + narrow_long_dll_bn)
+                           + narrow_long_dll_bn)
     fll_bn = np.array([0.6])
     '''pwr-130 steady'''
     # fll_sum_bn = np.array([[20], [10], [6]])
@@ -716,8 +713,7 @@ if __name__ == '__main__':
 
     '''pwr-135 steady'''
     fll_sum_bn = np.array([[20], [10], [6]])  # 3.5~6
-    pll_bn = np.array(
-        [[20], [pll_bn_wide[0]], [pll_bn_wide[1]], [pll_bn_wide[2]], [pll_bn_wide[3]]])  # 3.0~4.5; 1.5~3.5
+    pll_bn = np.array([[16],  [pll_bn_wide[0]], [pll_bn_wide[1]], [pll_bn_wide[2]], [pll_bn_wide[3]]])  # 3.0~4.5; 1.5~3.5
     '''old par'''
     # fll_sum_bn = np.array([[8], [4], [2.0]])
     # pll_bn = np.array([[8], [6], [4], [3.0], [pll_group_4]])
@@ -730,10 +726,9 @@ if __name__ == '__main__':
     pll3_bn = np.array([[10], [8], [6.0], [3.5], [1.0]])
 
     # limit_cfg = [12, 100, 50, 16, 35, 22, 17, 12]
-    limit_cfg = [12, 100, 45, 16, pli_loss_th, 26, 23, 16]
+    limit_cfg = [12, 100, 45, 16, 33, 26, 23, 16]
     print("the low state:")
-    result = A.cal(dll_sum_bn, pll_bn, pll_long_bn, pll3_bn, fll_sum_bn, fll3_sum_bn, dll_bn, fll_bn, fll3_bn,
-                   pll_bn_narrow, mode, rank, limit_cfg, gps_cn0_db, smooth_fac_factor)
+    result = A.cal(dll_sum_bn, pll_bn, pll_long_bn, pll3_bn, fll_sum_bn, fll3_sum_bn, dll_bn, fll_bn, fll3_bn, pll_bn_narrow, mode, rank, limit_cfg, gps_cn0_db, smooth_fac_factor)
 
     # data = {"fll_2": 7.573589424255466, "dll1": 0.7209415625849652, "fll_bit": 2.2019919183998953,
     #  "pll_3": 7.377932579656648, "pll_2": 9.231968331200513, "fll": 13.687896404735579, "pll_1": 11.848610966939232,
